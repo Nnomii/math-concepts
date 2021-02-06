@@ -7,12 +7,10 @@ const command = require('./command.js');
 client.on('ready', () => {
     console.log('The client is ready');
 
-    client.user.setPresence({
-        game:{
-            name:'Type %help for commands'
-        },
-        status:'online'
-    });
+    // Set the client user's presence
+    client.user.setPresence({ activity: { name: 'with discord.js' }, status: 'idle' })
+        .then(console.log)
+        .catch(console.error);
 
     command(client, ['help', 'commands'], message => {
         const embed = new Discord.MessageEmbed()
