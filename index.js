@@ -8,7 +8,12 @@ client.on('ready', () => {
     console.log('The client is ready');
 
     // Set the client user's presence
-    client.user.setPresence({ activity: { name: 'with discord.js' }, status: 'idle' })
+    client.user.setPresence({ activity:{
+            name: 'type %help for help',
+            type: 'COMPETING'
+        },
+        status: 'online'
+    })
         .then(console.log)
         .catch(console.error);
 
