@@ -39,7 +39,9 @@ client.on('ready', () => {
             .attachFiles(['../images/quad/1.png', '../images/quad/2.png'])
             .setImage('attachment://1.png')
 
-        message.channel.send(embed);
+        message.channel.send(embed)
+            .then(console.log)
+            .catch(console.error);
     });
 });
 
