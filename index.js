@@ -36,7 +36,7 @@ client.on('ready', () => {
     command(client, ['quad', 'quadratic', 'quadraticformula'], message => {
         const embed = new Discord.MessageEmbed()
             .setTitle('The quadratic formula')
-            .attachFiles(['../images/quad/1.png', '../images/quad/2.png'])
+            .attachFiles(['images/quad/1.png', 'images/quad/2.png'])
             .setImage('attachment://1.png')
 
         message.channel.send(embed)
