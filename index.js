@@ -33,15 +33,20 @@ client.on('ready', () => {
     });
 
     command(client, ['quad', 'quadratic', 'quadraticformula'], message => {
-        const embed = new Discord.MessageEmbed()
+        const quadFormula = new Discord.MessageEmbed()
             .setTitle('The quadratic formula')
             .setDescription('The quadratic formula is used to solve quadratic equations:')
             .attachFiles(['images/quad/1.png'])
             .setImage('attachment://1.png');
 
-        message.channel.send(embed)
+        const quadFormula2 = new Discord.MessageEmbed()
+            .setDescription('It helps in solving equations like this:')
+            .attachFiles(['images/quad/2.png'])
+            .setImage('attachment://2.png');
+
+        message.channel.send(quadFormula)
             .catch(console.error);
-        message.channel.send('For solutions to equations in the form:', {files: ['images/quad/2.png']})
+        message.channel.send(quadFormula2)
             .catch(console.error);
     });
 });
