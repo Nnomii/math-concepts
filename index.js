@@ -9,8 +9,8 @@ client.on('ready', () => {
 
     // Set the client user's presence
     client.user.setPresence({ activity:{
-            name: 'type %help for help',
-            type: 'COMPETING'
+            name: '%help',
+            type: 'LISTENING'
         },
         status: 'online'
     })
