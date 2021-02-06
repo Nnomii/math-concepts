@@ -11,13 +11,13 @@ client.on('ready', () => {
         const embed = new Discord.MessageEmbed()
             .setTitle('Help')
             .setDescription('Below is a list of commands. When called, the bot replies with info on that topic')
-            .addField(`${prefix}ping`, 'Pong!')
+            .addField(`${prefix}ping`, 'Pong!');
 
         message.channel.send(embed);
     });
 
     command(client, 'ping', message => {
-        message.channel.send('Pong!');
+        message.channel.send('doop');
     });
 });
 
