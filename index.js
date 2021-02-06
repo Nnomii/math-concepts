@@ -35,10 +35,13 @@ client.on('ready', () => {
     command(client, ['quad', 'quadratic', 'quadraticformula'], message => {
         const embed = new Discord.MessageEmbed()
             .setTitle('The quadratic formula')
-            .attachFiles(['images/quad/2.png', 'images/quad/1.png'])
-            .setImage('attachment://1.png')
+            .setDescription('The quadratic formula is used to solve quadratic equations:')
+            .attachFiles(['images/quad/1.png'])
+            .setImage('attachment://1.png');
 
         message.channel.send(embed)
+            .catch(console.error);
+        message.channel.send('For solutions to equations in the form:', {files: ['images/quad/2.png']})
             .catch(console.error);
     });
 });
