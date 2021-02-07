@@ -6,7 +6,7 @@ module.exports = (client) => {
     command(client, ['exponents'], message => {
         const exponentRules = new Discord.MessageEmbed()
             .setTitle('Exponent Rules')
-            .setDescription('Some of the Rules of Exponents or Laws of Exponents are summarized in the following table.')
+            .setDescription('The rules and laws of exponents:')
             .attachFiles(['images/exponent/exponentrules.png'])
             .setImage('attachment://exponentrules.png');
 
