@@ -36,7 +36,7 @@ client.on('ready', () => {
 
     command(client, ['quad', 'quadratic', 'quadraticformula'], message => {
         const quadFormula = new Discord.MessageEmbed()
-            .setTitle('The quadratic formula')
+            .setTitle('The Quadratic Formula')
             .setDescription('The quadratic formula is used to solve quadratic equations:')
             .attachFiles(['images/quad/1.png'])
             .setImage('attachment://1.png');
@@ -65,7 +65,7 @@ client.on('ready', () => {
 
     command(client, ['trigtable'], message => {
         const trigTable = new Discord.MessageEmbed()
-            .setTitle('Trig table')
+            .setTitle('Trig Table')
             .setDescription('The trig table for common angles')
             .attachFiles(['images/trig/table.jpg'])
             .setImage('attachment://table.jpg');
@@ -76,7 +76,7 @@ client.on('ready', () => {
 
     command(client, ['trigidentities'], message => {
         const trigIdentities = new Discord.MessageEmbed()
-            .setTitle('Trigonometric identities')
+            .setTitle('Trigonometric Identities')
             .setDescription('Useful trigonometric identities')
             .attachFiles(['images/trig/identities.png'])
             .setImage('attachment://itentities.png');
