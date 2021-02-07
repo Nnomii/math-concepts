@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const command = require('../command.js');
 
-// Shows a sheet of trig identities
+// Shows a table of exponent rules
 module.exports = (client) => {
     command(client, ['exponents'], message => {
         const exponentRules = new Discord.MessageEmbed()
