@@ -54,9 +54,9 @@ client.on('ready', () => {
     command(client, ['trig', 'trigtable'], message => {
         const trigTable = new Discord.MessageEmbed()
             .setTitle('Trig table')
-            .setDescription('')
+            .setDescription('The trig table for common angles')
             .attachFiles(['images/trig/1.jpg'])
-            .setImage('attachment://1.png');
+            .setImage('attachment://1.jpg');
 
         message.channel.send(trigTable)
             .catch(console.error);
