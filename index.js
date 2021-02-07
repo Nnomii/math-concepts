@@ -22,7 +22,8 @@ client.on('ready', () => {
             .setTitle('Help')
             .setDescription('Below is a list of commands. When called, the bot replies with info on that topic')
             .addField(`${prefix}ping`, `Pong!`)
-            .addField(`${prefix}quad / ${prefix}quadratic / ${prefix}quadraticformula`, `Displays the quadratic formula and help on how to use it`);
+            .addField(`${prefix}quad / ${prefix}quadratic / ${prefix}quadraticformula`, `Displays the quadratic formula and help on how to use it`)
+            .addField(`${prefix}trig / ${prefix}trigtable`, 'Displays the trig table')
 
         message.channel.send(embed);
     });
@@ -47,6 +48,16 @@ client.on('ready', () => {
         message.channel.send(quadFormula)
             .catch(console.error);
         message.channel.send(quadFormula2)
+            .catch(console.error);
+    });
+
+    command(client, ['trig', 'trigtable'], message => {
+        const trigTable = new Discord.MessageEmbed()
+            .setTitle('Trig table')
+            .attachFiles(['images/trig/1.png'])
+            .setImage('attachment://1.png');
+
+        message.channel.send(trigTable)
             .catch(console.error);
     });
 });
