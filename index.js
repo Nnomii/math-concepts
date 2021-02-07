@@ -17,7 +17,7 @@ client.on('ready', () => {
 
     let commands = fs.readdirSync(__dirname + '/commands/');
     commands.forEach(file => {
-        const command = require(`/commands/${file}`);
+        const command = require(`./commands/${file}`);
         command(client);
     });
 
