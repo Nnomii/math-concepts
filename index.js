@@ -54,7 +54,7 @@ client.on('ready', () => {
     command(client, ['trig', 'trigtable'], message => {
         const trigTable = new Discord.MessageEmbed()
             .setTitle('Trig table')
-            .attachFiles(['images/trig/1.png'])
+            .attachFiles(['images/trig/1.jpg'])
             .setImage('attachment://1.png');
 
         message.channel.send(trigTable)
