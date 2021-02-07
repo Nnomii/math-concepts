@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const { prefix } = require('./config.json');
-const command = require('./command.js');
 const fs = require('fs');
 
 client.on('ready', () => {
@@ -17,12 +15,18 @@ client.on('ready', () => {
     })
         .catch(console.error);
 
-    fs.readdir('/commands/', (err, files) => {
-        files.forEach(file => {
-            const command = require(file);
-            command(client);
-        });
+    let commands = fs.readdirSync('/commands/');
+    commands.forEach(file => {
+        const command = require(`/commands/${file}`);
+        command(client);
     });
+
+    // fs.readdir('/commands/', (err, files) => {
+    //     files.forEach(file => {
+    //         const command = require(file);
+    //         command(client);
+    //     });
+    // });
 
     // // Descriptions of commands
     // command(client, ['help', 'commands'], message => {
