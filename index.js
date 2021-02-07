@@ -23,9 +23,10 @@ client.on('ready', () => {
             .setDescription('Below is a list of commands. When called, the bot replies with info on that topic')
             .addField(`${prefix}ping`, `Pong!`)
             .addField(`${prefix}quad / ${prefix}quadratic / ${prefix}quadraticformula`, `Displays the quadratic formula and help on how to use it`)
-            .addField(`${prefix}trig / ${prefix}trigtable`, 'Displays the trig table')
+            .addField(`${prefix}trig`, 'Displays a list of trig related commands')
 
-        message.channel.send(embed);
+        message.channel.send(embed)
+            .catch(console.error);
     });
 
     // Command for testing
@@ -51,16 +52,39 @@ client.on('ready', () => {
             .catch(console.error);
     });
 
-    command(client, ['trig', 'trigtable'], message => {
+    command(client, ['trig', 'trigonometry'], message => {
+        const embed = new Discord.MessageEmbed()
+            .setTitle('Trigonometry')
+            .setDescription('Please specify - here is the list of trig related commands')
+            .addField(`${prefix}trigtable`, `Displays the trig table`)
+            .addField(`${prefix}trigidentities`, 'Displays a sheet of useful trigonometric identites')
+
+        message.channel.send(embed)
+            .catch(console.error);
+    });
+
+    command(client, ['trigtable'], message => {
         const trigTable = new Discord.MessageEmbed()
             .setTitle('Trig table')
             .setDescription('The trig table for common angles')
-            .attachFiles(['images/trig/1.jpg'])
-            .setImage('attachment://1.jpg');
+            .attachFiles(['images/trig/table.jpg'])
+            .setImage('attachment://table.jpg');
 
         message.channel.send(trigTable)
             .catch(console.error);
     });
+
+    command(client, ['trigidentities'], message => {
+        const trigIdentities = new Discord.MessageEmbed()
+            .setTitle('Trigonometric identities')
+            .setDescription('Useful trigonometric identities')
+            .attachFiles(['images/trig/identities.png'])
+            .setImage('attachment://itentities.png');
+
+        message.channel.send(trigIdentities)
+            .catch(console.error);
+    });
+
 });
 
 client.login(process.env.TOKEN);
