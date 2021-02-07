@@ -79,7 +79,7 @@ client.on('ready', () => {
             .setTitle('Trigonometric identities')
             .setDescription('Useful trigonometric identities')
             .attachFiles(['images/trig/identities.png'])
-            .setImage('attachment://itentities.png');
+            .setImage('attachment://identities.png');
 
         message.channel.send(trigIdentities)
             .catch(console.error);
